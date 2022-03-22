@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 // icons
-import Badge from '@material-ui/core/Badge';
+// import Badge from '@material-ui/core/Badge';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 
 // ###########################################
@@ -95,19 +95,33 @@ const Navbar = () => {
                     <Left>
                         <Language>EN</Language>
                         <SearchContainer>
-                                <Input />
-                            <Search style={{ color:'gray',fontSize: '2rem', fontWeight: 'bold', cursor:'pointer' } }>                                    
-                                </Search>
+                            <Input />
+                            <Search
+                                style={{
+                                    color: "gray",
+                                    fontSize: "2rem",
+                                    fontWeight: "bold",
+                                    cursor: "pointer",
+                                }}
+                            ></Search>
                         </SearchContainer>
                     </Left>
-                    <Center><Logo>LAMA.</Logo></Center>
+                    <Center>
+                        <Logo>LAMA.</Logo>
+                    </Center>
                     <Right>
                         <MenuItem>Regiseter</MenuItem>
                         <MenuItem>Sign In</MenuItem>
-                        <MenuItem>
+                        {/* <MenuItem>
                             <Badge badgeContent={3} color='primary' >
                                 <ShoppingCartOutlined style={{ fontSize:'3rem'}}/>
                             </Badge>
+                        </MenuItem> */}
+                        <MenuItem>
+                            <div style={{ position:'relative', }}>
+                                <ShoppingCartOutlined style={{ fontSize: "3rem" }} />
+                                <span style={{ position: 'absolute', top: '-9px',right:'-9px',fontSize:'12px',height:'20px',width:'20px',display:'flex' , justifyContent:'center' , alignItems:'center', background: 'darkblue', color: '#fff', borderRadius: '50%', padding:'0px' }}>0</span>
+                            </div>
                         </MenuItem>
                     </Right>
                 </Wrapper>
