@@ -16,7 +16,7 @@ const Announcement = () => {
     return (
         <>
             <Container>
-                Super Deal! Free Shipping on Orders over 50$! 
+                Super Deal! Free Shipping on Orders over 50$ ! 
             </Container>
         </>
     );
