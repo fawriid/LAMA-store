@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 // icons
@@ -94,6 +94,11 @@ const Slider = () => {
             setSlideIndex(slideIndex <2 ? slideIndex +1 : 0)
         }
     } 
+
+    useEffect(() => {
+        const changeSlide = setInterval(() => clickHandler('right'), 3500)
+        return  () => clearInterval(changeSlide)
+    }, [slideIndex, clickHandler])
  
     return (
         <>
