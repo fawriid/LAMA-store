@@ -54,11 +54,13 @@ const List = styled.ul`
     margin: 0;
     list-style: none;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 `
 const ListItem = styled.li`
+    margin:0 10px; 
     margin-bottom: 5px;
-    width: 50%;
+    width: 30%;
     cursor: pointer;
     transition: all 100ms linear;
     &:hover{
