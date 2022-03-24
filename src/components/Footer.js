@@ -8,6 +8,8 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    background-color: ${props => props.bgColor};
+    color:${props => props.color};
 `
 const Left = styled.div`
     flex:1;
@@ -84,9 +86,9 @@ const Payment = styled.img`
 `
 
 
-const Footer = () => {
+const Footer = (props) => {
     return (
-        <Container>
+        <Container bgColor={props.bgColor} color={props.color}>
             <Left>
                 <Logo>LAMA.</Logo>
                 <Desc>The most popular Mall in the Dubai</Desc>

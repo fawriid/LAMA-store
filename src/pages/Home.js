@@ -10,13 +10,13 @@ import Slider from '../components/Slider';
 const Home = () => {
     return (
         <>
-            <Announcement />
             <Navbar />
+            <Announcement />
             <Slider />
             <Categories />
             <Products />
             <NewsLetter />
-            <Footer />
+            <Footer bgcColor='white' color='black' />
         </>
     );
 };
