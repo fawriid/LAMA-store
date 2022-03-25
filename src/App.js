@@ -4,6 +4,7 @@ import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Cart from './pages/Cart';
 
 const App = () => {
     return (
@@ -12,7 +13,8 @@ const App = () => {
             {/* <ProductList /> */}
             {/* <ProductDetail /> */}
             {/* <Register /> */}
-            <Login />
+            {/* <Login /> */}
+            <Cart />
         </>
     );
 };
