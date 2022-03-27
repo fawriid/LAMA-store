@@ -2,19 +2,29 @@ import React from 'react';
 import styled from 'styled-components'
 
 
+// functions
+import { responsive768 } from '../functions';
+import { responsive500 } from '../functions';
+
+
+
 const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") top center;
     display: flex;
     align-items: center;
     justify-content: center;
 `;
+
 const Wrapper = styled.div`
+    
     padding: 20px;
     background-color: #fff;
-    width: 40%;
+    width: 50%;
+    ${responsive768({width:'80%'})}
+    ${responsive500({margin:'40px 0'})}
 `
 const Title = styled.h1`
     font-size: 2.4rem;
