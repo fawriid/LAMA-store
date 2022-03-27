@@ -6,6 +6,12 @@ import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
 import Products from "../components/Products";
 
+
+// functions
+import { responsive500 } from "../functions";
+import { responsive768 } from "../functions";
+
+
 const Container = styled.div``;
 const Title = styled.h1`
     text-align: center;
@@ -17,8 +23,11 @@ const FilterContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
+    ${responsive768({padding:'20px 30px'})}
 `
-const Filter = styled.div``
+const Filter = styled.div`
+    ${responsive768({margin:'0 10px'})}
+`
 const FilterText = styled.span`
     font-size: 2rem;
     font-weight: 600;
@@ -28,6 +37,7 @@ const Select = styled.select`
     margin-right: 10px;
     padding: 10px;
     cursor: pointer;
+    ${responsive500({marginTop:'20px'})}
 `
 const Option = styled.option`
     cursor: pointer;
@@ -75,7 +85,7 @@ const ProductList = () => {
             </FilterContainer>
             <Products />
             <NewsLetter />
-            <Footer bgColor='teal' color='white'/>
+            <Footer bgColor='teal' color='white' />
         </Container>
     );
 };

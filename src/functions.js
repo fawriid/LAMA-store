@@ -1,17 +1,17 @@
 import { css } from 'styled-components'
 
-export const responsive768 = (props) => {
+export const responsive768 = (styles) => {
     return css`
         @media screen and (max-width:768px) {
-            ${props}
+            ${styles}
         }
     `
 }
 
-export const responsive500 = (props) => {
+export const responsive500 = (styles) => {
     return css`
         @media screen and (max-width: 500px) {
-            ${props}
+            ${styles}
         }
     `;
 };

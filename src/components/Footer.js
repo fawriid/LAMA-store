@@ -15,7 +15,7 @@ const Container = styled.div`
     padding: 20px;
     background-color: ${(props) => props.bgColor};
     color: ${(props) => props.color};
-    ${responsive768({ padding: "0",flexDirection:'column' })}
+    ${responsive768({ padding: "0",flexDirection:'column',backgroundColor:'white',color:'black' })}
 `;
 const Left = styled.div`
     flex: 1;
@@ -61,7 +61,7 @@ const Center = styled.div`
         padding: "10px",
         margin: "20px 0",
         textAlign: "center",
-        backgroundColor: "#FCFBF9",
+        backgroundColor: '#FCFBF9',
     })}
 `;
 const Title = styled.h1`
