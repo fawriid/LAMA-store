@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components'
 
 
+// functions
+import { responsive768 } from '../functions';
+import { responsive500 } from '../functions';
+
+
 const Container = styled.div`
     flex: 1;
     position: relative;
@@ -27,9 +32,21 @@ const Image = styled.img`
 const Title = styled.h1`
     color: #fff;
     margin-bottom: 10px;
-    backdrop-filter:blur(20px);
+    backdrop-filter: blur(20px);
     padding: 5px 15px;
-`
+    ${responsive768({
+        textAlign: "center",
+        fontSize: "18px",
+        width: "60%",
+        padding: "5px",
+    })}
+    ${responsive500({
+        textAlign: "center",
+        fontSize: "3rem",
+        width: "60%",
+        padding: "5px",
+    })}
+`;
 const Button = styled.button`
     padding: 10px 10px;
     border: none;
@@ -39,10 +56,13 @@ const Button = styled.button`
     cursor: pointer;
     font-weight: 500;
     transition: all 200ms linear;
-    &:hover{
-        color:black;
+    &:hover {
+        color: black;
     }
-`
+    ${responsive768({ fontSize: "13px", padding:'5px' })}
+    ${responsive500({ fontSize: "20px", padding:'5px 15px' })}
+    
+`;
 
 const CategoryItem = ({item}) => {
     return (

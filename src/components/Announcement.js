@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
+// functions
+import { responsive500 } from '../functions';
+
+
 const Container = styled.div`
     height: 30px;
     display: flex;
@@ -9,6 +13,7 @@ const Container = styled.div`
     background-color: teal;
     color: #fff;
     font-size: 15px;
+    ${responsive500({height:'40px',padding:'5px', fontSize:'12px'})}
 `
 
 

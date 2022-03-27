@@ -3,54 +3,70 @@ import React from 'react';
 import styled from 'styled-components';
 
 
+
+// functions
+import { responsive768 } from '../functions';
+
+
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: ${props => props.bgColor};
-    color:${props => props.color};
-`
+    background-color: ${(props) => props.bgColor};
+    color: ${(props) => props.color};
+    ${responsive768({ padding: "0",flexDirection:'column' })}
+`;
 const Left = styled.div`
-    flex:1;
+    flex: 1;
     padding: 20px;
-`
+    ${responsive768({ padding: "10px",margin:'20px 0',textAlign:'center' })}
+`;
 const Logo = styled.h1`
     font-size: 4rem;
-`
+    ${responsive768({ fontSize: "3.5rem" })}
+`;
 const Desc = styled.p`
     margin: 20px 0px;
     font-size: 2rem;
 `
 const SocialContainer = styled.div`
-    display:flex;
-`
+    display: flex;
+    ${responsive768({justifyContent:'center'})}
+`;
 const SocialIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 5px;
-    width:40px;
-    height:40px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: #${props => props.color};
+    background-color: #${(props) => props.color};
     color: #fff;
     cursor: pointer;
     transition: all 200ms ease;
-    &:hover{
-        background-color: #${props => props.color}cc;
+    &:hover {
+        background-color: #${(props) => props.color}cc;
     }
-`
+    ${responsive768({ width:'50px',height:'50px',margin:'0 10px' })}
+`;
 
 
 const Center = styled.div`
     flex: 1;
     text-align: center;
     padding: 20px;
+    ${responsive768({
+        padding: "10px",
+        margin: "20px 0",
+        textAlign: "center",
+        backgroundColor: "#FCFBF9",
+    })}
 `;
 const Title = styled.h1`
-    
-`
+    ${responsive768({ fontSize: "25px" })}
+`;
 const List = styled.ul`
     padding: 1rem;
     margin: 0;
@@ -75,6 +91,7 @@ const Right = styled.div`
     flex: 1;
     text-align: right;
     padding: 20px;
+    ${responsive768({ padding: "10px",margin:'20px 0',textAlign:'center' })}
 `;
 const ContactItem = styled.div`
     margin: 10px 0;

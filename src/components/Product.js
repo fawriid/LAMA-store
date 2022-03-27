@@ -3,6 +3,11 @@ import React from 'react';
 import styled from 'styled-components'
 
 
+// function
+import { responsive768 } from '../functions'; 
+import { responsive500 } from '../functions';
+
+
 const IconContainer = styled.div`
     opacity: 0;
     display: flex;
@@ -32,6 +37,7 @@ const Container = styled.div`
     &:hover ${IconContainer}{
         opacity: 1;
     }
+    ${responsive500({width:'90%',minWidth:'90%'})}
 `;
 const Circle = styled.div`
     position: absolute;
@@ -45,7 +51,8 @@ const Image = styled.img`
     height: 80%;
     z-index: 2;
     object-fit: cover;
-`
+    ${responsive768({ width: "70%" })}
+`;
 
 const Icon = styled.div`
     transform: scale(1.25);

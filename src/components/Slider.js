@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
+
+//
+import { responsive768 } from '../functions';
+import { responsive500 } from '../functions';
+
+
 // icons
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
 
@@ -56,33 +62,40 @@ const ImgContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex: 1.5;
-`
+    flex: 1;
+    ${responsive500({ display: "none" })}
+`;
 const Image = styled.img`
     height: 80%;
-`
+    ${responsive768({ height:'60%' })}
+`;
 const InfoContainer = styled.div`
     flex: 1;
-    padding: 80px;
-`
+    padding: 60px;
+    ${responsive768({ flex: '2',padding:'20px' , display:'flex', justifyContent:'left', alignItems:'center', flexDirection:'column' })}
+`;
 const Title = styled.h1`
     font-size: 50px;
-`
+    ${responsive768({fontSize:'25px'})}
+`;
 const Desc = styled.p`
     margin: 20px 0;
     font-size: 20px;
     letter-spacing: 3px;
-`
+    ${responsive768({ fontSize: "15px",letterSpacing:'1px' })}
+`;
 const Button = styled.button`
     background-color: transparent;
     padding: 5px;
     cursor: pointer;
     border: 0.5px solid gray;
     font-size: 18px;
+    ${responsive768({ fontSize: "15px" })}
+
     transition: all 200ms linear;
-    &:hover{
+    &:hover {
     }
-`
+`;
 
 const Slider = () => {
 

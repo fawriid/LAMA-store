@@ -2,6 +2,10 @@ import { Send } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components'
 
+// functions
+import { responsive768 } from '../functions';
+import { responsive500 } from '../functions';
+
 
 const Container = styled.div`
     height: 60vh;
@@ -15,13 +19,15 @@ const Title = styled.h1`
     font-size: 5rem;
     margin-bottom: 20px;
     letter-spacing: 2px;
-`
+    ${responsive768({ fontSize: "4rem" })}
+`;
 const Desc = styled.div`
     font-size: 2.4rem;
     margin-bottom: 20px;
-`
+    ${responsive768({ textAlign: "center",fontSize:'2rem' })}
+`;
 const InputContainer = styled.div`
-    width: 50%;
+    width: 70%;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -45,7 +51,8 @@ const Button = styled.button`
     &:active{
         transform: scale(1.4);
     }
-`
+    ${responsive500({flex:'1'})}
+`;
 
 
 const NewsLetter = () => {

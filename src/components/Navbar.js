@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// functions
+import { responsive768 } from '../functions';
+import { responsive500 } from '../functions';
 
 // icons
 // import Badge from '@material-ui/core/Badge';
@@ -31,7 +34,7 @@ const Left = styled.div`
     text-align: left;
     display: flex;
     align-items: center;
-`
+`;
 
 const Language = styled.span`
     cursor: pointer;
@@ -41,29 +44,36 @@ const Language = styled.span`
     :hover{
         color: #ccc;
     }
+    ${responsive768({display:'none'})}
 `
 const SearchContainer = styled.div`
-    border: .5px solid lightgray;
+    border: 0.5px solid lightgray;
     display: flex;
     margin-left: 20px;
     padding: 5px;
     align-items: center;
-`
+    ${responsive768({ marginLeft: "5px", width: "100%" })}
+    ${responsive500({ width: "fit-content" })}
+`;
 const Input = styled.input`
     border: none;
     outline: none;
     padding: 3px;
-`
+    ${responsive768({ width: "100%" })}
+    ${responsive500({display:'none'})}
+`;
 
 // #########
 // center
 const Center = styled.div`
     flex: 1;
     text-align: center;
-`
+    ${responsive768({ flex: "2", textAlign: "right" })}
+    ${responsive500({ flex: "1", textAlign:'center' })}
+`;
 const Logo = styled.h1`
     font-weight: bold;
-`
+`;
 
 // #######3
 // right
@@ -73,6 +83,8 @@ const Right = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    ${responsive768({ flex: "3" })}
+    ${responsive500({ flex: "1" })}
 `;
 const MenuItem = styled.div`
     cursor: pointer;
@@ -80,6 +92,13 @@ const MenuItem = styled.div`
     transition: all 200ms linear;
     :hover {
         color: #ccc;
+    }
+    ${responsive768({ marginLeft: "15px" })}
+    &:nth-child(1) {
+        ${responsive500({ display: "none" })}
+    }
+    &:nth-child(2) {
+        ${responsive500({ display: "none" })}
     }
 `;
 
