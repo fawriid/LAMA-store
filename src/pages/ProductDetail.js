@@ -1,15 +1,28 @@
 import React from "react";
+
+// style
 import styled from "styled-components";
+
+// components
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
+
+// icons
 import { Add, Remove } from "@material-ui/icons";
+
+// functions
+import { responsive768 } from '../functions.js'
+import {responsive500} from '../functions.js' 
+
 
 const Container = styled.div``;
 const Wrapper = styled.div`
     padding: 40px 20px 10px;
     display: flex;
+    margin-bottom: 20px;
+    ${responsive500({ flexDirection:'column' })}
 `;
 const ImageContainer = styled.div`
     flex: 1;
@@ -37,11 +50,12 @@ const Price = styled.span`
     font-weight: 200;
 `
 const FilterContainer = styled.div`
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    ${responsive768({width:'90%'})}
 `
 const Filter = styled.div`
     display: flex;
@@ -55,10 +69,11 @@ const FilterColor = styled.div`
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: ${props => props.bgColor};
+    background-color: ${(props) => props.bgColor};
     cursor: pointer;
     margin-left: 10px;
-`
+    ${responsive768({ width: '20px' , height:'20px',marginLeft:'7px',marginRight:'2px' })}
+`;
 const Select = styled.select`
     margin-left: 10px;
     padding: 10px;
@@ -69,10 +84,11 @@ const Option = styled.option`
 `
 const AddContainer = styled.div`
     margin-top: 30px;
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
-`
+    ${responsive768({ width: "90%" })}
+`;
 const Amount = styled.div`
     display: flex;
     align-items: center;
