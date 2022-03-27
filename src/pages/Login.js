@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 
+// functions
+import { responsive768 } from "../functions";
+import { responsive500 } from "../functions";
+
+
 
 const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
             top center;
@@ -16,7 +21,10 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 20px;
     background-color: #fff;
-    width: 30%;
+    width: 40%;
+    overflow-x: hidden;
+    ${responsive768({ width:'70%', margin:'20px 0'})}
+    ${responsive500({ width:'80%'})}
 `;
 const Title = styled.h1`
     font-size: 2.4rem;

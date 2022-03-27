@@ -11,9 +11,9 @@ const App = () => {
         <>
             {/* <Home /> */}
             {/* <ProductList /> */}
-            <ProductDetail />
+            {/* <ProductDetail /> */}
             {/* <Register /> */}
-            {/* <Login /> */}
+            <Login />
             {/* <Cart /> */}
         </>
     );
