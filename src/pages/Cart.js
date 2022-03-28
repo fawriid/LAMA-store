@@ -1,5 +1,6 @@
 import React from 'react';
 
+// style
 import styled from 'styled-components'
 
 // components
@@ -7,6 +8,13 @@ import Navbar from '../components/Navbar'
 import Announcement from '../components/Announcement'
 import Footer from '../components/Footer'
 import { Add, Remove } from '@material-ui/icons';
+
+
+// functions
+import { responsive768 } from '../functions';
+import { responsive500 } from '../functions';
+
+
 
 // styled elements
 const Container = styled.div`
@@ -26,97 +34,123 @@ const Top = styled.div`
     align-items: center;
     padding: 20px;
     margin: 20px 0;
-`
+    ${responsive500({ flexDirection: "column" })}
+`;
 const TopButton = styled.button`
     padding: 10px;
-    border: ${props => props.type === 'filled' ? 'none' : "1px solid black"};
-    background-color: ${props => props.type === 'filled' ? 'black' : "transparent"};
-    color: ${props => props.type === 'filled' ? 'white' : "black"};
+    border: ${(props) => (props.type === "filled" ? "none" : "1px solid black")};
+    background-color: ${(props) => (props.type === "filled" ? "black" : "transparent")};
+    color: ${(props) => (props.type === "filled" ? "white" : "black")};
     cursor: pointer;
     font-size: 1.8rem;
     transition: all 200ms ease;
-    &:hover{
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.35);
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
         transform: translateY(-2px);
     }
-`
+    ${responsive768({ fontSize: "1.6rem", padding: "5px" })}
+    ${responsive500({ margin: "5px 0" })}
+`;
 const TopTexts = styled.div`
-    display: flex;    
-`
+    display: flex;
+    ${responsive768({ flexDirection: "column", margin: "0 10px" })}
+    ${responsive500({ margin: "10px 0" })}
+`;
 const TopText = styled.p`
     margin: 0 10px;
     text-decoration: underline;
     cursor: pointer;
     transition: all 200ms ease;
-    &:hover{
+    &:hover {
         color: blue;
     }
-`
+    ${responsive768({ margin: "10px 0" })}
+`;
 
 const Bottom = styled.div`
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items:center ;
+    ${responsive768({flexDirection:'column',justifyContent:'center'})}
 `
 const Info = styled.div`
     flex: 3;
-`
+    ${responsive768({ flex: "1",width:'90%' })}
+`;
 const Product = styled.div`
+    ${responsive500({margin:'20px 0',width:'90%',textAlign:'center'})}
 `
 const Image = styled.img`
     width: 200px;
     margin-right: 20px;
-    `
+    ${responsive768({ width: "180px", marginRight: "10px" })}
+    ${responsive500({ margin: "0 auto" })}
+`;
 const ProductDetails = styled.div`
     flex: 1;
     display: flex;
     min-height: 200px;
-`
+    ${responsive500({flexDirection:'column'})}
+`;
 const Details = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
-`
+`;
 const B = styled.b`
     margin-right: 5px;
-`
+    ${responsive768({ marginLeft: "5px" })}
+`;
 
-const ProductName = styled.span``
-const ProductId = styled.span``;
+const ProductName = styled.span`
+    ${responsive500({ margin: "5px auto" })}
+`;
+const ProductId = styled.span`
+    ${responsive500({ margin: "5px auto" })}
+`;
 const ProductColor = styled.span`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
+    ${responsive500({margin:'5px auto',})}
 `;
-const ProductSize = styled.span``;
+const ProductSize = styled.span`
+    ${responsive500({ margin: "5px auto" })}
+`;
 
 
 const PriceDetail = styled.div`
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
-padding-right: 20px;
-`
+    padding-right: 20px;
+    ${responsive768({ paddingRight: "5px" })}
+    ${responsive500({ flexDirection:'row' })}
+`;
 const AmountContainer = styled.div`
     display: flex;
     align-items: center;
-`
+    ${responsive500({ margin: "0 10px",justifyContent:'center' })}
+`;
 const Amount = styled.span`
     font-size: 2.4rem;
-    margin: 0px 10px ;
+    margin: 0px 10px;
     font-weight: 500;
-`
+    ${responsive768({ fontSize: "2rem" })}
+`;
 const Price = styled.span`
     font-size: 2.5rem;
     font-weight: 200;
     margin-top: 15px;
-`
+    ${responsive768({ fontSize: "2.3rem" })}
+    ${responsive500({ margin: "0",marginLeft:'15px' })}
+`;
 
 const Hr = styled.hr`
     width: 92%;
@@ -124,16 +158,18 @@ const Hr = styled.hr`
     background-color: lightgray;
     margin: 5px 0;
     border: none;
-`
+    ${responsive768({ width: "100%" })}
+`;
 
 const Summary = styled.div`
     flex: 1;
-    align-self: start;    
+    align-self: start;
     padding: 20px;
     border: 1px solid lightgray;
     border-radius: 20px;
     height: fit-content;
-`
+    ${responsive768({ alignSelf: "center",marginTop:'30px' })}
+`;
 const SummaryTitle = styled.h1`
     text-align: center;
     font-weight: 200;
