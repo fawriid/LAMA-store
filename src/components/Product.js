@@ -1,11 +1,12 @@
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react';
+import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 
 // function
-import { responsive768 } from '../functions'; 
-import { responsive500 } from '../functions';
+import { responsive768 } from '../Functions'; 
+import { responsive500 } from '../Functions';
 
 
 const IconContainer = styled.div`
@@ -76,14 +77,18 @@ const Product = ({item}) => {
     return (
         <Container>
             <Circle />
-            <Image src={item.img} alt='product' />
+            <Image src={item.img} alt="product" />
             <IconContainer>
-                <Icon>
-                    <ShoppingCartOutlined />
-                </Icon>
-                <Icon>
-                    <SearchOutlined />
-                </Icon>
+                <Link to="/cart">
+                    <Icon>
+                        <ShoppingCartOutlined />
+                    </Icon>
+                </Link>
+                <Link to="/productdetail">
+                    <Icon>
+                        <SearchOutlined />
+                    </Icon>
+                </Link>
                 <Icon>
                     <FavoriteBorderOutlined />
                 </Icon>

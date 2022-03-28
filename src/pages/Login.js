@@ -1,10 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 
 // functions
-import { responsive768 } from "../functions";
-import { responsive500 } from "../functions";
+import { responsive768 } from "../Functions";
+import { responsive500 } from "../Functions";
 
 
 
@@ -74,6 +75,9 @@ const Link = styled.a`
 
 
 const Login = () => {
+
+    const navigate = useNavigate()
+
     return (
         <Container>
             <Container>
@@ -82,7 +86,14 @@ const Login = () => {
                     <Form>
                         <Input placeholder="username" />
                         <Input placeholder="password" />
-                        <Button>LOGIN</Button>
+                        <Button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                navigate("/", { replace: true });
+                            }}
+                        >
+                            LOGIN
+                        </Button>
                         <Link>Do you forget your password ?</Link>
                         <Link>CREATE AN ACCOUNT</Link>
                     </Form>

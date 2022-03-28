@@ -8,8 +8,8 @@ import Products from "../components/Products";
 
 
 // functions
-import { responsive500 } from "../functions";
-import { responsive768 } from "../functions";
+import { responsive500 } from "../Functions";
+import { responsive768 } from "../Functions";
 
 
 const Container = styled.div``;

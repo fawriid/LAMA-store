@@ -2,8 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 // functions
-import { responsive768 } from '../functions';
-import { responsive500 } from '../functions';
+import { responsive768 } from '../Functions';
+import { responsive500 } from '../Functions';
+
+// react-router-dom
+import {Link} from 'react-router-dom'
 
 // icons
 // import Badge from '@material-ui/core/Badge';
@@ -126,22 +129,43 @@ const Navbar = () => {
                         </SearchContainer>
                     </Left>
                     <Center>
-                        <Logo>LAMA.</Logo>
+                        <Link to="/">
+                            <Logo>LAMA.</Logo>
+                        </Link>
                     </Center>
                     <Right>
-                        <MenuItem>Regiseter</MenuItem>
-                        <MenuItem>Sign In</MenuItem>
-                        {/* <MenuItem>
-                            <Badge badgeContent={3} color='primary' >
-                                <ShoppingCartOutlined style={{ fontSize:'3rem'}}/>
-                            </Badge>
-                        </MenuItem> */}
-                        <MenuItem>
-                            <div style={{ position:'relative', }}>
-                                <ShoppingCartOutlined style={{ fontSize: "3rem" }} />
-                                <span style={{ position: 'absolute', top: '-9px',right:'-9px',fontSize:'12px',height:'20px',width:'20px',display:'flex' , justifyContent:'center' , alignItems:'center', background: 'darkblue', color: '#fff', borderRadius: '50%', padding:'0px' }}>0</span>
-                            </div>
-                        </MenuItem>
+                        <Link to="/register">
+                            <MenuItem>Regiseter</MenuItem>
+                        </Link>
+                        <Link to="/login">
+                            <MenuItem>Sign In</MenuItem>
+                        </Link>
+                        <Link to="/cart">
+                            <MenuItem>
+                                <div style={{ position: "relative" }}>
+                                    <ShoppingCartOutlined style={{ fontSize: "3rem" }} />
+                                    <span
+                                        style={{
+                                            position: "absolute",
+                                            top: "-9px",
+                                            right: "-9px",
+                                            fontSize: "12px",
+                                            height: "20px",
+                                            width: "20px",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            background: "darkblue",
+                                            color: "#fff",
+                                            borderRadius: "50%",
+                                            padding: "0px",
+                                        }}
+                                    >
+                                        0
+                                    </span>
+                                </div>
+                            </MenuItem>
+                        </Link>
                     </Right>
                 </Wrapper>
             </Container>

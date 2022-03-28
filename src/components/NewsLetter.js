@@ -3,8 +3,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 // functions
-import { responsive768 } from '../functions';
-import { responsive500 } from '../functions';
+import { responsive768 } from '../Functions';
+import { responsive500 } from '../Functions';
 
 
 const Container = styled.div`

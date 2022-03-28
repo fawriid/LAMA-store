@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 
 // functions
-import { responsive768 } from '../functions';
+import { responsive768 } from '../Functions';
 
 
 const Container = styled.div`

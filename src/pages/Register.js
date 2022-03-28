@@ -1,10 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 
 // functions
-import { responsive768 } from '../functions';
-import { responsive500 } from '../functions';
+import { responsive768 } from '../Functions';
+import { responsive500 } from '../Functions';
 
 
 
@@ -65,6 +66,9 @@ const Button = styled.button`
 
 
 const Register = () => {
+
+    const navigate = useNavigate()
+
     return (
         <Container>
             <Wrapper>
@@ -80,7 +84,11 @@ const Register = () => {
                         By creating an account, I consent to the processing of my personal
                         data in accordance with the <b>PRIVACY POLICY</b>
                     </Agreement>
-                    <Button>CREATE</Button>
+                    <Button onClick={(e) => {
+                        e.preventDefault()
+                        navigate('/' , {replace:true})
+                    }}>
+                        CREATE</Button>
                 </Form>
             </Wrapper>
         </Container>

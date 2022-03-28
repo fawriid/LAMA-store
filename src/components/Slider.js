@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 
-//
-import { responsive768 } from '../functions';
-import { responsive500 } from '../functions';
+//functions
+import { responsive768 } from '../Functions';
+import { responsive500 } from '../Functions';
 
 
 // icons
@@ -12,6 +12,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
 
 // slider Items
 import { sliderItems } from '../data';
+import { useNavigate } from 'react-router-dom';
 
 // styled components
 const Container = styled.div`
@@ -99,6 +100,8 @@ const Button = styled.button`
 
 const Slider = () => {
 
+    const navigate = useNavigate() 
+
     const [slideIndex, setSlideIndex] = useState(1)
     const clickHandler = (direction) => {
         if (direction === 'left') {
@@ -130,7 +133,7 @@ const Slider = () => {
                             <InfoContainer>
                                 <Title>{item.title}</Title>
                                 <Desc>{item.desc}</Desc>
-                                <Button>Shop Now</Button>
+                                <Button onClick={() => navigate('/productlist')}>Shop Now</Button>
                             </InfoContainer>
                         </Slide>
                     ))}

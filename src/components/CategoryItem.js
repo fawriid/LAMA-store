@@ -1,10 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 
 // functions
-import { responsive768 } from '../functions';
-import { responsive500 } from '../functions';
+import { responsive768 } from '../Functions';
+import { responsive500 } from '../Functions';
 
 
 const Container = styled.div`
@@ -65,12 +66,15 @@ const Button = styled.button`
 `;
 
 const CategoryItem = ({item}) => {
+
+    const navigate = useNavigate()
+
     return (
         <Container>
                 <Image src={item.img} />
             <InfoContainer>
                 <Title>{ item.title}</Title>
-                <Button>SHOP NOW ! </Button>
+                <Button onClick={() => navigate('productlist')}>SHOP NOW ! </Button>
             </InfoContainer>
         </Container>
     );

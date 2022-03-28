@@ -11,8 +11,8 @@ import { Add, Remove } from '@material-ui/icons';
 
 
 // functions
-import { responsive768 } from '../functions';
-import { responsive500 } from '../functions';
+import { responsive768 } from '../Functions';
+import { responsive500 } from '../Functions';
 
 
 

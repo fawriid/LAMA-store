@@ -3,7 +3,7 @@ import { categories } from '../data';
 import CategoryItem from './CategoryItem';
 
 // functions
-import { responsive500 } from "../functions";
+import { responsive500 } from "../Functions";
 
 
 const Container = styled.div`

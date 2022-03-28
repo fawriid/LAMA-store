@@ -13,8 +13,8 @@ import Footer from "../components/Footer";
 import { Add, Remove } from "@material-ui/icons";
 
 // functions
-import { responsive768 } from '../functions.js'
-import {responsive500} from '../functions.js' 
+import { responsive768 } from '../Functions.js'
+import {responsive500} from '../Functions.js' 
 
 
 const Container = styled.div``;
